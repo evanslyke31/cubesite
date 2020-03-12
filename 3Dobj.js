@@ -1,5 +1,5 @@
 var shapes = [];
-var links = ["https://evanslyke31.github.io/cubesite/wspeed", "https://evanslyke31.github.io/sortvis", "https://evanslyke31.github.io/pathvis"];
+var links = ["https://evanslyke31.github.io/wspeed", "https://evanslyke31.github.io/sortvis", "https://evanslyke31.github.io/pathvis"];
 //var stars = [];
 //var starAmt;
 var mip;
