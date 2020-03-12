@@ -1,0 +1,68 @@
+body {
+    text-align: center;
+    background-color:#262626;
+}
+
+.my-button {
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+.slider-contain {
+    width: 40%;
+    margin-left: 30%;
+}
+
+.control {
+    background: rgb(38,38,38);
+background: linear-gradient(0deg, rgba(38,38,38,1) 0%, rgba(113,113,113,1) 100%);
+
+    padding-bottom: 13px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background: #FFF;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0F0;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #000;
+  cursor: pointer;
+}
+
+h3 {
+    color: #FFF;
+    font-size: 20px;
+}
+
+@media screen and (max-width:1024px) {
+    .my-button {
+        font-size: 20px;
+    }
+
+    .slider-contain {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
