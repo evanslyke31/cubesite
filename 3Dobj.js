@@ -1,7 +1,5 @@
 var shapes = [];
 var links = ["https://evanslyke31.github.io/wspeed", "https://evanslyke31.github.io/sortvis", "https://evanslyke31.github.io/pathvis"];
-//var stars = [];
-//var starAmt;
 var mip;
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight - 6);
@@ -12,18 +10,12 @@ function setup() {
 	mips = false;
 	for (var i = 0; i < links.length; i++)
 		shapes.push(new Cube(Math.sqrt(width * width + height * height) * random(.035, .06), links[i]));
-	/*for(var i = 0; i < starAmt; i++)
-		stars.push(new Star());*/
 	background(0);
 }
 
 function draw() {
 	background(0);
 
-	/*for(var i = 0; i < starAmt; i++) {
-		stars[i].move();
-		stars[i].display();
-	}*/
 	for (var i = 0; i < links.length; i++) {
 		shapes[i].move();
 		shapes[i].display();
@@ -79,64 +71,6 @@ function resizeMat(A, resize) {
 		[0, 0, resize]];
 	return matMul(rMatrix, A);
 }
-
-/*function doubleClicked() {
-	for(var i = 0; i < links.length; i++) {
-		shapes[i].checkClicked();
-	}
-}*/
-
-/*function Star() {
-
-	this.init = function() {
-		this.x = 0;
-		this.y = 0;
-		this.size = 1;
-		this.gfct = .009;
-		this.gfctRate = random(.001,.004);
-		this.side = floor(random(0,4));
-		if(this.side == 0) {
-			this.x = random(0,width);
-			this.y = -this.size;
-		} else if(this.side == 1) {
-			this.x = width + this.size;
-			this.y = random(0, height);
-		} else if(this.side == 2) {
-			this.x = random(0,width);
-			this.y = height + this.size;
-		} else if(this.side >= 3) {
-			this.x = -this.size;
-			this.y = random(0, height);
-		}
-	}
-	this.init();
-
-	this.move = function() {
-
-		if(mouseX == 0 && mouseY == 0) {
-			this.x = this.x + this.gfct * (width/2 - this.x);
-			this.y = this.y + this.gfct * (height/2 - this.y);
-		} else {
-			this.x = this.x + this.gfct * (mouseX - this.x);
-			this.y = this.y + this.gfct * (mouseY - this.y);
-		}
-
-		if(this.gfct >= .1) {
-			this.init();
-		}
-		if(mouseIsPressed) {
-			this.gfct -= 0;
-		} else {
-			this.gfct += this.gfctRate;
-		}
-	}
-
-	this.display = function() {
-		stroke(255,255,255);
-		point(this.x, this.y, this.size);
-	}
-
-}*/
 
 function Cube(size, link) {
 	this.size = size;
@@ -195,25 +129,6 @@ function Cube(size, link) {
 			this.mip = false;
 		}
 
-
-
-		/*if(mouseIsPressed) {
-			if(mouseX > this.x - this.size * 3.5/2 && mouseX < this.x + this.size * 3.5/2 && mouseY > this.y - this.size * 3.5/2 && mouseY < this.y + this.size * 3.5/2 && !mip) {
-				this.mip = true;
-			}
-		} else {
-			this.mip = false;
-			mip = false;
-		}
-
-		if(this.mip) {
-			mip = true;
-			for(var i = 0; i < cube.length; i++) {
-				cube[i] = rotatY(cube[i], (pmouseX - mouseX)/100);
-				cube[i] = rotatX(cube[i], -(pmouseY - mouseY)/100);
-			}
-		}
-		*/
 		if (this.clicked) {
 			for (var i = 0; i < cube.length; i++) {
 				cube[i] = resizeMat(cube[i], 1.025);
@@ -235,12 +150,6 @@ function Cube(size, link) {
 	}
 
 	this.display = function () {
-
-		/*==if(mouseX > this.x - this.size * 3.5/2 && mouseX < this.x + this.size * 3.5/2 && mouseY > this.y - this.size * 3.5/2 && mouseY < this.y + this.size * 3.5/2) {
-				document.body.style.cursor = "pointer";
-		} else {
-			document.body.style.cursor = "default";
-		}*/
 
 		if (window.innerWidth < 600)
 			strokeWeight(1);
